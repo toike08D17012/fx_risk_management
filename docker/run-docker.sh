@@ -49,11 +49,21 @@ main() {
         command=(bash)
     fi
 
-    docker compose "${profile_args[@]}" run \
-        --rm \
-        -e "NEW_UID=$(id -u)" \
-        -e "NEW_GID=$(id -g)" \
-        "${service_name}" "${command[@]}"
+    local -a docker_compose_cmd=(docker compose)
+    if ((${#profile_args[@]} > 0)); then
+        docker_compose_cmd+=("${profile_args[@]}")
+    fi
+
+    docker_compose_cmd+=(
+        run
+        --rm
+        -e "NEW_UID=$(id -u)"
+        -e "NEW_GID=$(id -g)"
+        "${service_name}"
+        "${command[@]}"
+    )
+
+    "${docker_compose_cmd[@]}"
 }
 
 main "$@"
