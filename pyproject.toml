@@ -1,7 +1,7 @@
 [project]
-name = "python-workspace-template"
+name = "fx-risk-management"
 version = "0.1.0"
-description = "Add your description here"
+description = "Risk management toolkit for FX repeat trading"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [

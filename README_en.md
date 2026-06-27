@@ -1,23 +1,25 @@
 ---
-title: Python Workspace Template
-description: Modern Python development environment with Dev Container, uv, Ruff, and Mypy
+title: FX Risk Management
+description: Risk management toolkit for FX repeat trading with required margin estimation support
 ---
 
-## Python Workspace Template
+## FX Risk Management
 
 [Japanese Version](README.md) | English
 
-A template repository for Python project development.
-Provides a modern development environment using Dev Container, uv, Ruff, and Mypy.
+A repository focused on risk management for FX repeat trading.
+It provides the development foundation to estimate required margin at an assumed minimum price based on trading settings.
 
-## Initial Customization
+## Project Goals
 
-When using this template for a new project, update the following items first.
+- Quantify risk based on repeat-trade configurations
+- Estimate required margin under assumed minimum-price scenarios
+- Keep a reliable development baseline for comparing setting changes
 
-- Project description in `README.md` and `README_en.md`
-- Directory name `src/python_workspace_template` (for example, `src/<repository_name>`)
-- `image`, `volumes`, and `working_dir` in `docker/docker-compose.yml`
-- `name` and `workspaceFolder` in `.devcontainer/devcontainer.json`
+## Current Scope
+
+At this stage, the repository focuses on development environment and quality workflow setup.
+Core margin-calculation logic and dedicated validation tests will be added in upcoming iterations.
 
 ## Features
 
@@ -55,7 +57,7 @@ Based on `AGENTS.md`, we recommend running quality checks through the wrapper sc
 ```
 
 These wrappers run via `./docker/run-docker.sh` internally.
-This template enforces Docker-only execution and does not use local fallback.
+This repository enforces Docker-only execution and does not use local fallback.
 
 `pytest` options can be passed through as-is.
 

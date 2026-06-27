@@ -1,23 +1,25 @@
 ---
-title: Python Workspace Template
-description: Modern Python development environment with Dev Container, uv, Ruff, and Mypy
+title: FX Risk Management
+description: Risk management toolkit for FX repeat trading with required margin estimation support
 ---
 
-## Python Workspace Template
+## FX Risk Management
 
-[English Versions](README_en.md) | 日本語
+[English Version](README_en.md) | 日本語
 
-Pythonプロジェクト開発用のテンプレートリポジトリです。
-Dev Container、uv、Ruff、Mypyを用いたモダンな開発環境を提供します。
+FXでリピートトレードを行う際のリスク管理を目的としたリポジトリです。
+取引設定に応じて、想定最低価格時に必要となる証拠金を見積もるための土台を提供します。
 
-## テンプレート利用時の初期設定
+## プロジェクトの目的
 
-このテンプレートを新規プロジェクトとして使う場合は、最初に以下を更新してください。
+- リピートトレード設定に応じたリスクを定量化する
+- 想定最低価格に到達した場合の必要証拠金を計算できるようにする
+- 設定変更時の影響を比較しやすい開発基盤を維持する
 
-- `README.md` / `README_en.md` のプロジェクト説明
-- `src/python_workspace_template` のディレクトリ名（例: `src/<repository_name>`）
-- `docker/docker-compose.yml` の `image` / `volumes` / `working_dir`
-- `.devcontainer/devcontainer.json` の `name` / `workspaceFolder`
+## 現在のスコープ
+
+現時点では、計算ロジック実装に向けた開発環境と品質管理フローを整備しています。
+今後、証拠金計算のコアロジックと検証用テストを順次追加する予定です。
 
 ## 機能・特徴
 
@@ -59,7 +61,7 @@ uv add <package_name>
 ```
 
 各 wrapper は内部で `./docker/run-docker.sh` を使って実行されます。
-このテンプレートではローカルフォールバックを行わず、`docker` 実行を必須とします。
+このリポジトリではローカルフォールバックを行わず、`docker` 実行を必須とします。
 
 pytest は追加オプションもそのまま渡せます。
 

@@ -1,6 +1,6 @@
-"""Smoke tests for the template package."""
+"""Smoke tests for the FX risk management package."""
 
-from python_workspace_template import __version__
+from fx_risk_management import __version__
 
 
 def test_package_version() -> None:

@@ -1437,7 +1437,7 @@ wheels = [
 ]
 
 [[package]]
-name = "python-workspace-template"
+name = "fx-risk-management"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
